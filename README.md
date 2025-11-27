@@ -1,6 +1,8 @@
 # 101509179_comp3123_labtest2 - Niaj Hossain
 # Niaj's Weather App
 
+Vercel link: https://101509179-comp3123-labtest2.vercel.app/
+
 A simple and straightforward weather application that shows the weather in a city.
 
 ## Project Description
