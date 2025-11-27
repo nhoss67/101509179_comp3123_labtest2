@@ -1,0 +1,141 @@
+.weather-card {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 30px;
+  padding: 30px;
+  color: white;
+  min-width: 280px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.weather-card-header {
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.day-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  background: linear-gradient(90deg, #fff, #a8edea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.date {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin: 5px 0;
+}
+
+.location {
+  font-size: 1rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.location-icon {
+  font-size: 0.9rem;
+}
+
+.location-icon-img {
+  width: 30px;
+  height: 30px;
+}
+
+.weather-card-body {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.weather-icon-container {
+  margin: -20px 0;
+}
+
+.weather-icon {
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.temperature-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-size: 5rem;
+  font-weight: 300;
+  line-height: 1;
+  background: linear-gradient(180deg, #fff 0%, #a8edea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.temperature-unit {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.weather-description {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+  text-transform: capitalize;
+}
+
+.feels-like {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 5px 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .weather-card {
+    padding: 20px;
+    min-width: 250px;
+  }
+
+  .temperature {
+    font-size: 4rem;
+  }
+
+  .weather-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
